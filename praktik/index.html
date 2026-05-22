@@ -1,0 +1,446 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Gift.ru — Магазин подарков | Динамические эффекты CSS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Скрываем служебный заголовок для доступности, но он исправляет иерархию */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        .product-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem;
+        }
+        /* Дополнительные стили для сохранения идеального визуала */
+        .cat-image-wrapper img, .hero-girl-img, .quiz-img img, .article-pic, .footer-logo img {
+            max-width: 100%;
+            display: block;
+        }
+        .scroll-up {
+            cursor: pointer;
+        }
+        h1, h2, h3, h4, .cat-card h3, .article-title {
+            margin: 0;
+        }
+        .cat-card.lg h3, .cat-card.sm h3, .cat-card.wide h3 {
+            font-size: inherit;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <nav class="top-nav">
+                    <a href="#">Доставка</a>
+                    <a href="#">Оплата</a>
+                    <a href="#">О нас</a>
+                    <a href="#">Бренды</a>
+                    <a href="#">Гарантии и возврат</a>
+                    <a href="#">Контакты</a>
+                    <a href="#">Помощь</a>
+                </nav>
+                <div class="top-contacts">
+                    <span class="phone">+7 495 755 69 83</span>
+                    <span class="email">nonamemag@gmail.com</span>
+                    <div class="auth-links">
+                        <a href="#">Войти</a> / <a href="#">Зарегистрироваться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <img src="Лого.png" alt="Gift.ru">
+                </div>
+                
+                <button class="btn-catalog">
+                    <img src="католог.png" alt="Каталог" class="catalog-icon">
+                    Каталог
+                </button>
+                
+                <nav class="main-nav">
+                    <a href="#">Конструктор подарка</a>
+                    <a href="#">Статьи</a>
+                </nav>
+                
+                <div class="search-box">
+                    <input type="text" placeholder="Поиск">
+                    <div class="search-yellow-circle">
+                        <img src="поиск.png" alt="Поиск" class="search-icon-img">
+                    </div>
+                </div>
+                
+                <div class="header-icons">
+                    <a href="#" class="icon-link" title="Профиль">
+                        <img src="профиль.png" alt="Профиль" class="icon-img">
+                    </a>
+                    <a href="#" class="icon-link" title="Избранное">
+                        <img src="избранное.png" alt="Избранное" class="icon-img">
+                    </a>
+                    <a href="#" class="icon-link" title="Закладки">
+                        <img src="закладки.png" alt="Закладки" class="icon-img">
+                    </a>
+                    <a href="#" class="icon-link cart-link" title="Корзина">
+                        <img src="корзина.png" alt="Корзина" class="icon-img">
+                        <span class="badge">1</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container hero-flex">
+            <div class="hero-content">
+                <h1>Безусловно, теория требует одобрения</h1>
+                <p>Господа, высокотехнологичная концепция общественного уклада не даёт нам иного выбора, кроме определения форм</p>
+                <button class="btn-red">Узнать больше</button>
+            </div>
+            <div class="hero-image">
+                <div class="g-wrapper">
+                    <img src="девушка.png" alt="Shopping girl" class="hero-girl-img">
+                </div>
+            </div>
+        </div>
+        
+        <div class="slider-dots">
+            <span class="dot"></span>
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <!-- КАТЕГОРИИ: исправлена структура заголовков (h2 между h1 и h3) + сохранены оригинальные имена файлов с кодировкой пробелов -->
+    <section class="categories container">
+        <h2 class="visually-hidden">Категории подарков</h2>
+        <div class="cat-grid">
+            <div class="cat-card lg" style="background: linear-gradient(135deg, #FFF9F0 0%, #FFE4B5 100%);">
+                <h3>На дни рождения</h3>
+                <div class="cat-image-wrapper">
+                    <img src="др.png" alt="Birthday">
+                </div>
+            </div>
+            <div class="cat-subgrid">
+                <div class="cat-card sm" style="background: linear-gradient(135deg, #F0F0FF 0%, #E0E0FF 100%);">
+                    <h3>Детям</h3>
+                    <div class="cat-image-wrapper">
+                        <img src="детям.png" alt="Kids">
+                    </div>
+                </div>
+                <div class="cat-card sm" style="background: linear-gradient(135deg, #E0FCF5 0%, #B8F0E0 100%);">
+                    <h3>На свадьбу</h3>
+                    <div class="cat-image-wrapper">
+                        <img src="на%20свадьбу.png" alt="Wedding">
+                    </div>
+                </div>
+                <div class="cat-card wide" style="background: linear-gradient(135deg, #FFF0F0 0%, #FFD4D4 100%);">
+                    <div class="wide-text">
+                        <h3>На Новый Год</h3>
+                    </div>
+                    <div class="cat-image-wrapper">
+                        <img src="на%20новый%20год.png" alt="New Year">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products container">
+        <div class="section-header">
+            <h2>Популярные товары</h2>
+            <div class="tabs">
+                <span class="tab active">Все</span>
+                <span class="tab">Детям до 6 лет</span>
+                <span class="tab">Игрушки</span>
+                <span class="tab">Посуда</span>
+            </div>
+        </div>
+
+        <div class="carousel-wrapper">
+            <button class="carousel-arrow prev" id="prevProducts">❮</button>
+            <div class="product-carousel" id="productsCarousel">
+                <div class="product-card">
+                    <div class="badge-fire">🔥</div>
+                    <div class="wishlist">🤍</div>
+                    <div class="p-img"><img src="очки.jpg" alt="Product"></div>
+                    <div class="p-info">
+                        <h3 class="product-title">Название товара Название товара</h3>
+                        <p class="stock">В наличии: 15 шт</p>
+                        <div class="rating">⭐⭐⭐⭐☆</div>
+                        <div class="price">2500 р.</div>
+                        <button class="btn-buy">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="badge-fire">🔥</div>
+                    <div class="wishlist">🤍</div>
+                    <div class="p-img"><img src="очки.jpg" alt="Product"></div>
+                    <div class="p-info">
+                        <h3 class="product-title">Название товара Название товара</h3>
+                        <p class="stock">В наличии: 15 шт</p>
+                        <div class="rating">⭐⭐⭐⭐☆</div>
+                        <div class="price">2500 р.</div>
+                        <button class="btn-buy">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card highlighted">
+                    <div class="badge-sale">-40%</div>
+                    <div class="wishlist active-heart">❤️</div>
+                    <div class="p-img"><img src="очки.jpg" alt="Product"></div>
+                    <div class="p-info">
+                        <h3 class="product-title">Название товара Название товара</h3>
+                        <p class="stock">В наличии: 15 шт</p>
+                        <div class="rating">⭐⭐⭐⭐☆</div>
+                        <div class="price-container">
+                            <span class="old-price">4600 р.</span>
+                            <span class="price">2500 р.</span>
+                        </div>
+                        <button class="btn-buy">Добавить в корзину</button>
+                        <div class="quick-view">Быстрый просмотр</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="badge-fire">🔥</div>
+                    <div class="wishlist">🤍</div>
+                    <div class="p-img"><img src="очки.jpg" alt="Product"></div>
+                    <div class="p-info">
+                        <h3 class="product-title">Название товара Название товара</h3>
+                        <p class="stock">В наличии: 15 шт</p>
+                        <div class="rating">⭐⭐⭐⭐☆</div>
+                        <div class="price">2500 р.</div>
+                        <button class="btn-buy">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow next" id="nextProducts">❯</button>
+        </div>
+
+        <div class="dots-pagination">
+            <span class="p-dot"></span>
+            <span class="p-dot"></span>
+            <span class="p-dot"></span>
+            <span class="p-dot active-blue"></span>
+            <span class="p-dot"></span>
+            <span class="p-dot"></span>
+            <span class="p-dot"></span>
+        </div>
+    </section>
+
+    <section class="quiz-banner container">
+        <div class="quiz-box">
+            <div class="quiz-text">
+                <h2>Не знаешь что подарить? — ответь на 7 вопросов и мы дадим решение</h2>
+                <button class="btn-red">Пройти опрос</button>
+            </div>
+            <div class="quiz-img">
+                <img src="реклама.png" alt="Quiz characters">
+            </div>
+        </div>
+    </section>
+
+    <section class="products container">
+        <div class="section-header">
+            <h2>Акции</h2>
+            <div class="tabs">
+                <span class="tab active">Все</span>
+                <span class="tab">Детям до 6 лет</span>
+                <span class="tab">Игрушки</span>
+                <span class="tab">Посуда</span>
+            </div>
+        </div>
+
+        <div class="carousel-wrapper">
+            <button class="carousel-arrow prev" id="prevSales">❮</button>
+            <div class="product-carousel" id="salesCarousel">
+                <div class="product-card">
+                    <div class="badge-sale">-40%</div>
+                    <div class="wishlist">🤍</div>
+                    <div class="p-img"><img src="очки.jpg" alt="Product"></div>
+                    <div class="p-info">
+                        <h3 class="product-title">Название товара Название товара</h3>
+                        <p class="stock">В наличии: 15 шт</p>
+                        <div class="rating">⭐⭐⭐⭐☆</div>
+                        <div class="price-container">
+                            <span class="old-price">4600 р.</span>
+                            <span class="price">2500 р.</span>
+                        </div>
+                        <button class="btn-buy action-btn">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="badge-sale">-40%</div>
+                    <div class="wishlist">🤍</div>
+                    <div class="p-img"><img src="очки.jpg" alt="Product"></div>
+                    <div class="p-info">
+                        <h3 class="product-title">Название товара Название товара</h3>
+                        <p class="stock">В наличии: 15 шт</p>
+                        <div class="rating">⭐⭐⭐⭐☆</div>
+                        <div class="price-container">
+                            <span class="old-price">4600 р.</span>
+                            <span class="price">2500 р.</span>
+                        </div>
+                        <button class="btn-buy action-btn">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card highlighted">
+                    <div class="badge-sale">-40%</div>
+                    <div class="wishlist active-heart">❤️</div>
+                    <div class="p-img"><img src="очки.jpg" alt="Product"></div>
+                    <div class="p-info">
+                        <h3 class="product-title">Название товара Название товара</h3>
+                        <p class="stock">В наличии: 15 шт</p>
+                        <div class="rating">⭐⭐⭐⭐☆</div>
+                        <div class="price-container">
+                            <span class="old-price">4600 р.</span>
+                            <span class="price">2500 р.</span>
+                        </div>
+                        <button class="btn-buy action-btn">Добавить в корзину</button>
+                        <div class="quick-view">Быстрый просмотр</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="badge-sale">-40%</div>
+                    <div class="wishlist">🤍</div>
+                    <div class="p-img"><img src="очки.jpg" alt="Product"></div>
+                    <div class="p-info">
+                        <h3 class="product-title">Название товара Название товара</h3>
+                        <p class="stock">В наличии: 15 шт</p>
+                        <div class="rating">⭐⭐⭐⭐☆</div>
+                        <div class="price-container">
+                            <span class="old-price">4600 р.</span>
+                            <span class="price">2500 р.</span>
+                        </div>
+                        <button class="btn-buy action-btn">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow next" id="nextSales">❯</button>
+        </div>
+
+        <div class="dots-pagination">
+            <span class="p-dot"></span>
+            <span class="p-dot"></span>
+            <span class="p-dot"></span>
+            <span class="p-dot active-blue"></span>
+            <span class="p-dot"></span>
+            <span class="p-dot"></span>
+            <span class="p-dot"></span>
+        </div>
+    </section>
+
+    <section class="articles-section container">
+        <div class="section-header">
+            <h2>Статьи</h2>
+            <a href="#" class="see-all-articles">Посмотреть все</a>
+        </div>
+        <div class="articles-grid">
+            <div class="article-card-new">
+                <div class="article-img-wrapper">
+                    <img src="ст1.jfif" alt="Article image" class="article-pic">
+                </div>
+                <div class="article-text-wrapper">
+                    <div class="article-title">Название статьи Название статьи</div>
+                    <div class="article-description">
+                        А ещё ключевые особенности структуры проекта формируют глобальную экономическую сеть и при этом - рассмотрены исключительно ...
+                    </div>
+                    <a href="#" class="article-link">Посмотреть —→</a>
+                </div>
+            </div>
+            <div class="article-card-new">
+                <div class="article-img-wrapper">
+                    <img src="ст2.jpg" alt="Article image" class="article-pic">
+                </div>
+                <div class="article-text-wrapper">
+                    <div class="article-title">Название статьи Название статьи</div>
+                    <div class="article-description">
+                        А ещё ключевые особенности структуры проекта формируют глобальную экономическую сеть и при этом - рассмотрены исключительно ...
+                    </div>
+                    <a href="#" class="article-link">Посмотреть —→</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fortune-wheel container">
+        <h2>Колесо фортуны</h2>
+        <div class="wheel-outer-container">
+            <div class="wheel-wrapper">
+                <div class="wheel">
+                    <div class="wheel-center">Крутите колесо и узнайте какой подарок подарить!</div>
+                </div>
+                <div class="wheel-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-logo">
+                <img src="лого%20снизу.png" alt="logo footer">
+                <div class="cards">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" width="40" alt="Mastercard">
+                </div>
+                <p>©Все права защищены</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Конструктор подарка</a>
+                <a href="#">Вопрос - ответ</a>
+                <a href="#">Статьи</a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Доставка</a>
+                <a href="#">Оплата</a>
+                <a href="#">О нас</a>
+                <a href="#">Бренды</a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Гарантии и возврат</a>
+                <a href="#">Контакты</a>
+                <a href="#">Помощь</a>
+            </div>
+            <div class="footer-contacts">
+                <p>+7 495 755 69 83</p>
+                <p>nonamemag@gmail.com</p>
+                <div class="socials">
+                    <span>(IG)</span> <span>(FB)</span> <span>(VK)</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Вверх ↑</div>
+
+    <script>
+        function initCarousel(carouselId, prevId, nextId) {
+            const carousel = document.getElementById(carouselId);
+            const prevBtn = document.getElementById(prevId);
+            const nextBtn = document.getElementById(nextId);
+            if (!carousel || !prevBtn || !nextBtn) return;
+            const scrollAmount = 320;
+            prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
+            nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
+        }
+        initCarousel('productsCarousel', 'prevProducts', 'nextProducts');
+        initCarousel('salesCarousel', 'prevSales', 'nextSales');
+    </script>
+</body>
+</html>
